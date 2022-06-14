@@ -1,0 +1,274 @@
+
+* { box-sizing: border-box; }
+:root{
+  --main-color: #ffffff;
+  --svg-color: #181818;
+  --even-card: grey;
+  --odd-card: #ffffff;
+  --odd-card-text: #2c3e50;
+}
+[data-theme="dark"]{
+  --main-color: #000000;
+  --svg-color: #ffffff;
+  --even-card: rgb(33, 35, 38);
+  --odd-card: #000000;
+  --odd-card-text: lightblue;
+}
+
+.container_app{
+  background-color: var(--main-color);
+  height: 100%;
+  width: 100%;
+}
+
+.container_app{
+  transition: 0.4s;
+  width: 100%;
+  max-width: 100%;
+}
+
+.app_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+.serch_bar{
+    width: 80%;
+}
+.view_type{
+  color: var(--svg-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+.list_view{
+  margin-left: 2em;
+}
+svg path{
+  stroke: var(--svg-color)
+}
+input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding-left: 1em;
+    font-size: 20px;
+}
+
+.grid_type{
+  margin-top: 0.2em;
+  margin-left: 1em;
+}
+.theme-switch-wrapper {
+  margin-top: 2.2em;
+  margin-left:1em;
+}
+  #toggle_checkbox {
+    display: none;
+  }
+  
+  label {
+    display: block;
+    width: 70px;
+    height: 42px;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  label:before {
+    top: 8px;
+    left: 8px;
+    width: 27px;
+    height: 27px;
+    border: 3px solid red;
+  }
+  
+  label:after {
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 42px;
+    border: 3px solid #143240;
+  }
+  
+  label:before,
+  label:after {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: 0.5s ease top, 0.5s ease left, 0.5s ease right, 0.5s ease width,
+      0.5s ease height, 0.5s ease border-color;
+  }
+  
+  #toggle_checkbox:checked + label:before {
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 42px;
+    border-color: #143240;
+  }
+  
+  #toggle_checkbox:checked + label:after {
+    top: 8px;
+    right: 8px;
+    width: 27px;
+    height: 27px;
+    border-color: red;
+  }
+  .book_card.list .card_info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .book_card.list .genre{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  .book_card.list .authors{
+    width: 200px;
+    /* margin-left: 10em; */
+    display: flex;
+    flex-direction: column;
+  }
+  .book_image{
+    /* margin-right: 10em; */
+    width: 150px;
+    height: 188px;
+  }
+  .book_card.list{
+    transition: 0.4s;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+  .book_card.grid{
+    transition: 0.4s;
+    color: var(--svg-color);
+    border: 1px solid var(--svg-color);
+    border-radius: 20px;
+    height: auto;
+    width: 200px;
+    margin: 0 1em;
+    flex-grow: 1;
+    width: calc(25% - 2em);
+    margin-bottom: 2em;
+    display: inline-block;
+  }
+  .book_card.grid .title{
+    margin-top: 2em;
+  }
+  .book_card.grid .genre{
+    height: 100px;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+  .book_card.grid .authors{
+    height: 100px;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+  .book_card.list:nth-child(even){
+    color: var(--odd-card-text);
+    background-color: var(--odd-card);
+  }
+  .book_card.list:nth-child(odd){
+    color: white;
+    background-color: var(--even-card);
+  }
+  .book_modal__title{
+    margin-top: 2em;
+    font-size: 20px;
+  }
+  .book_modal_author{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 2em;
+  }
+  .book_modal__description{
+    margin-top: 2em;
+    text-align: center;
+  }
+  .book_card.list .title{
+    width: 300px;
+    font-size: 20px;
+    /* color: .black; */
+  }
+  .book_modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .book_modal__img{
+    width: 150px;
+    height: 188px;
+  }
+  @media(max-width: 767px){
+    .book_card.grid .title{
+      margin-top: 0;
+      height: 50px;
+    }
+    .book_card.grid .genre{
+      height: 80px;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .book_card.grid .authors{
+      height: 100px;
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+    }
+    .book_card.grid{
+      color: var(--svg-color);
+      border: 1px solid var(--svg-color);
+      border-radius: 0px;
+      height: auto;
+      margin: 0 1em;
+      flex-grow: 1;
+      width: calc(50% - 2em);
+      margin-bottom: 2em;
+      display: inline-block;
+    }
+    .book_card.list{
+      align-items: unset;
+      font-size: 10px;
+    }
+    .book_card.list .card_info{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* height: 300px; */
+    }
+    .book_card.list .title{
+      font-size: 15px;
+      width: 150px;
+    }
+    .serch_bar{
+      width: 60%;
+  }
+    .container_app{
+      width: 100%;
+    }
+  }
