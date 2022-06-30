@@ -3,13 +3,8 @@
     <div class="container_app" data-theme="light" id="darkMode">
       <div class="app_header">
         <div class="serch_bar">
-          <input type="text" name="" id="" v-model="search">
+          <input type="text" name="" id="" v-model="search" placeholder="Search...">
         </div>
-        <div class="theme-switch-wrapper" >
-          <input type="checkbox" id="toggle_checkbox" @click="toggleDarkMode">
-          <label for="toggle_checkbox"></label>
-        </div>
-
     </div>
       <BookComponent class="list" :tomes="filteredBooks"/>
   </div>
@@ -41,21 +36,7 @@ export default {
   },
 
   methods: {
-    setData(){
-      console.log('test');
-      // this.tome.title = this.tomes.title
-    },
         ...mapActions(["fetchAllBooks"]),
-      toggleDarkMode() {
-      const container = document.getElementById("darkMode");
-      const dataTheme = container.getAttribute("data-theme");
-      if (dataTheme == "light") {
-        container.setAttribute("data-theme", "dark");
-      } else {
-        container.setAttribute("data-theme", "light");
-      }
-    },
-
   },
   computed: {
     filteredBooks: function(){

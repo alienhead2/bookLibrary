@@ -7,23 +7,16 @@
   --odd-card: #ffffff;
   --odd-card-text: #2c3e50;
 }
-[data-theme="dark"]{
-  --main-color: #000000;
-  --svg-color: #ffffff;
-  --even-card: rgb(33, 35, 38);
-  --odd-card: #000000;
-  --odd-card-text: lightblue;
-}
-
 .container_app{
   background-color: var(--main-color);
   height: 100%;
-  width: 100%;
+  width: 1280px;
 }
 
 .container_app{
+  margin: 0 auto;
   transition: 0.4s;
-  width: 100%;
+  width: 1280px;
   max-width: 100%;
 }
 
@@ -35,9 +28,11 @@
     align-content: center;
 }
 .serch_bar{
-    width: 80%;
+    margin-top: 2em;
+    width: 100%;
 }
 .view_type{
+  margin-top: 2em;
   color: var(--svg-color);
   cursor: pointer;
   display: flex;
@@ -148,6 +143,8 @@ input{
     height: 188px;
   }
   .book_card.list{
+    box-shadow: 5px 5px 5px 5px rgba(15,15,95, 0.4);
+    margin-bottom: 1em;
     transition: 0.4s;
     display: flex;
     align-content: center;
@@ -156,6 +153,7 @@ input{
     flex-direction: row;
   }
   .book_card.grid{
+    box-shadow: 5px 5px 5px 5px rgba(15,15,95, 0.4);
     transition: 0.4s;
     color: var(--svg-color);
     border: 1px solid var(--svg-color);
@@ -212,6 +210,9 @@ input{
     font-size: 20px;
     /* color: .black; */
   }
+  .book_image{
+    margin-top: 1em;
+  }
   .book_modal{
     display: flex;
     flex-direction: column;
@@ -242,7 +243,7 @@ input{
     .book_card.grid{
       color: var(--svg-color);
       border: 1px solid var(--svg-color);
-      border-radius: 0px;
+      border-radius: 20px;
       height: auto;
       margin: 0 1em;
       flex-grow: 1;

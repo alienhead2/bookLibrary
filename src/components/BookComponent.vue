@@ -2,7 +2,8 @@
   <div>
     <b-modal id="modal-1" title="Book Modal" hide-footer>
       <div class="book_modal">
-      <img :src="tome.img" alt="" class="book_modal__img">
+      <img  v-if="tome.img != null" :src="tome.img" alt="" class="book_modal__img">
+      <img  v-else src="/img/bookCover.jpg" class="book_modal__img">
       <span class="book_modal__title">
         {{tome.title}}
       </span>
@@ -22,7 +23,8 @@
     </div>
       <div v-for="(book, idx) in tomes" :key="idx" @click="setData(book)" class="book_card list" v-b-modal.modal-1>
 
-        <img :src="book.thumbnailURL" alt="" class="book_image">
+        <img v-if="book.thumbnailURL != null" :src="book.thumbnailURL" alt="" class="book_image">
+        <img v-else src="/img/bookCover.jpg" alt="" class="book_image">
         <div class="card_info">
           <div class="title">
         <span >{{book.title}}</span>
