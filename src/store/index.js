@@ -5,25 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state:{
-        darkMode: false,
         books: []
     },
     getters:{
         books(state){
             return state.books
         },
-        darkMode(state){
-            return state.darkMode
-        }
     },
     mutations:{
         setBooks(state,books){
             state.books = books
         },
-        setDarkMode(state,mode){
-            state.darkMode = mode
-            window.localStorage.setItem('darkMode', mode)
-        }
     },
     actions:{
         async fetchAllBooks(context){
@@ -35,8 +27,5 @@ export default new Vuex.Store({
             .catch((err) => console.error(err))
             
         },
-        setDarkMode({commit}, payload){
-            commit("setDarkMode", payload)
-        }
     }
 })
